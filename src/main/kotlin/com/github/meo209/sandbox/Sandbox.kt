@@ -19,6 +19,7 @@ import org.openartifact.artifact.core.event.subscribe
 import org.openartifact.artifact.extensions.reset
 import org.openartifact.artifact.graphics.*
 import org.openartifact.artifact.graphics.cameras.PerspectiveCamera
+import org.openartifact.artifact.graphics.interfaces.ITexture
 import org.openartifact.artifact.graphics.mesh.Mesh
 import org.openartifact.artifact.graphics.window.WindowConfig
 import org.openartifact.artifact.input.*
@@ -53,7 +54,9 @@ class Sandbox : Application(
 
         renderer = createRenderer()
 
-        mesh = Mesh(resource("meshes/airboat.obj"))
+        mesh = Mesh(resource("backpack/backpack.obj"),
+            renderer.choose<ITexture>()
+                .create(resource("backpack/albedo.jpg")))
 
         camera = PerspectiveCamera(90f, Vec3(4, 4, 4), Vec3(22.5f, - 45, 0))
 
