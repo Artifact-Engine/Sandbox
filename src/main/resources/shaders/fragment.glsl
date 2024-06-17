@@ -7,9 +7,6 @@ in vec3 v_Color;
 in vec3 v_Normal;
 in vec2 v_TexCoord;
 
-uniform vec3 u_Light_Pos;
-uniform vec3 u_Light_Color;
-
 uniform sampler2D sampler;
 
 void main() {
@@ -28,5 +25,5 @@ void main() {
     vec3 result = (ambient + diffuse) * texColor;
     a_Color = vec4(result * v_Color, 1.0);
     */
-    a_Color = vec4(texColor, 1.0);
+    a_Color = vec4(texColor, 1);
 }

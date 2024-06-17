@@ -13,7 +13,6 @@ package com.github.meo209.sandbox
 import glm_.vec2.Vec2
 import glm_.vec3.Vec3
 import org.openartifact.artifact.core.application.Application
-import org.openartifact.artifact.core.event.events.FPSUpdateEvent
 import org.openartifact.artifact.core.event.events.ResizeEvent
 import org.openartifact.artifact.core.event.subscribe
 import org.openartifact.artifact.extensions.reset
@@ -54,7 +53,7 @@ class Sandbox : Application(
 
         renderer = createRenderer()
 
-        mesh = Mesh(resource("backpack/backpack.obj"),
+        mesh = Mesh(resource("backpack/backpack.fbx"),
             renderer.choose<ITexture>()
                 .create(resource("backpack/albedo.jpg")))
 
